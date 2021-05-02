@@ -4,12 +4,14 @@ exports.getCollaborators = function (req, res) {
     CollaboratorsService.getCollaborators().then(function (result) {
         if (result) {
             return res.status(200).send({
+                result:'ok',
                 data: result
             })
         }
     }, function (error) {
         if (error) {
             return res.status(401).send({
+                result:'error',
                 code: error.codeMessage,
                 message: error.message
             })
