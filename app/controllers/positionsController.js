@@ -4,6 +4,7 @@ exports.getPositions = function (req, res) {
     PositionsService.getPositions().then(function (result) {
         if (result) {
             return res.status(200).send({
+                result:'ok',
                 data: result
             })
         }
